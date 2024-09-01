@@ -1,0 +1,1 @@
+require("vaw-colors").colorscheme()
