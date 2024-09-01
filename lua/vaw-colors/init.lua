@@ -132,7 +132,9 @@ local function set_groups()
     BufferLineTabClose          = common.bufferline.selected,
 
     -- language specific
-    ["@property.toml"]          = { link = "@type.toml" }
+    ["@property.toml"]          = { link = "@type.toml" },
+    ["@markup.heading"]         = { link = "Title" },
+    ["@markup.list"]            = { link = "Statement" },
   }
 
   for group, parameters in pairs(groups) do
