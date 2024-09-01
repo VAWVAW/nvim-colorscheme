@@ -44,6 +44,7 @@ local function set_groups()
     SignColumn                  = { ctermfg = 14, ctermbg = colors.black },
     DapBreakpoint               = { ctermfg = colors.red },
     NonText                     = { ctermfg = colors.blue },
+    Conceal                     = { ctermfg = colors.gray },
 
     -- pmenu
     Pmenu                       = { ctermfg = colors.white, ctermbg = colors.gray_dark },
