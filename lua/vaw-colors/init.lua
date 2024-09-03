@@ -6,7 +6,6 @@ local colors = {
   brown = 172,
   cyan = 51,
   cyan_dark = 37,
-  gold = 220,
   green = 47,
   green_dark = 34,
   gray = 244,
@@ -16,6 +15,8 @@ local colors = {
   red = 196,
   violet = 165,
   white = 231,
+  yellow = 226,
+  yellow_dark = 220,
 }
 local common = {
   file = {
@@ -45,6 +46,13 @@ local function set_groups()
     DapBreakpoint               = { ctermfg = colors.red },
     NonText                     = { ctermfg = colors.blue },
     Conceal                     = { ctermfg = colors.gray },
+    Visual                      = { ctermbg = colors.gray },
+
+    DiagnosticOk                = { ctermfg = colors.green },
+    DiagnosticHint              = { ctermfg = colors.gray },
+    DiagnosticInfo              = { ctermfg = colors.blue },
+    DiagnosticWarn              = { ctermfg = colors.yellow },
+    DiagnosticError             = { ctermfg = colors.red },
 
     -- pmenu
     Pmenu                       = { ctermfg = colors.white, ctermbg = colors.gray_dark },
@@ -60,9 +68,9 @@ local function set_groups()
     Operator                    = { link = "Normal" },
 
     Statement                   = { ctermfg = colors.brown },
-    Function                    = { ctermfg = colors.gold },
+    Function                    = { ctermfg = colors.yellow_dark },
     Comment                     = { ctermfg = colors.cyan },
-    Type                        = { ctermfg = colors.green },
+    Type                        = { ctermfg = colors.blue },
     LspInlayHints               = { ctermfg = colors.gray },
 
     -- data types
@@ -83,6 +91,8 @@ local function set_groups()
     -- gitsigns
     GitSignsAdd                 = { ctermfg = common.file.add },
     GitSignsDelete              = { ctermfg = common.file.delete },
+    GitSignsAddPreview          = { ctermfg = common.file.add },
+    GitSignsDeletePreview       = { ctermfg = common.file.delete },
     GitSignsChange              = { ctermfg = common.file.change },
 
     -- illuminate
@@ -136,6 +146,7 @@ local function set_groups()
     ["@property.toml"]          = { link = "@type.toml" },
     ["@markup.heading"]         = { link = "Title" },
     ["@markup.list"]            = { link = "Statement" },
+    ["@variable"]               = { ctermfg = colors.green },
   }
 
   for group, parameters in pairs(groups) do
