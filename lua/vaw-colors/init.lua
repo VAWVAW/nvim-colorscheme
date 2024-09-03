@@ -47,6 +47,9 @@ local function set_groups()
     NonText                     = { ctermfg = colors.blue },
     Conceal                     = { ctermfg = colors.gray },
     Visual                      = { ctermbg = colors.gray },
+    MatchParen                  = { ctermbg = colors.cyan_dark },
+    Directory                   = { ctermfg = 159 },
+    CursorLine                  = { cterm = { underline = true, } },
 
     DiagnosticOk                = { ctermfg = colors.green },
     DiagnosticHint              = { ctermfg = colors.gray },
