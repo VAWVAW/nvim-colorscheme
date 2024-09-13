@@ -1,7 +1,6 @@
 local colors = {
   black = 16,
   blue = 33,
-  blue_light = 39,
   blue_dark = 26,
   brown = 172,
   cyan = 51,
@@ -13,7 +12,6 @@ local colors = {
   gray_red = 203,
   magenta = 201,
   red = 196,
-  violet = 165,
   white = 231,
   yellow = 226,
   yellow_dark = 220,
@@ -22,7 +20,7 @@ local common = {
   file = {
     add = 34,
     delete = colors.red,
-    change = colors.blue_light,
+    change = 39,
     ignored = colors.gray,
     modified = colors.magenta,
   },
@@ -44,7 +42,7 @@ local function set_groups()
     LineNr                      = { ctermfg = colors.gray },
     SignColumn                  = { ctermfg = 14, ctermbg = colors.black },
     DapBreakpoint               = { ctermfg = colors.red },
-    NonText                     = { ctermfg = colors.blue },
+    NonText                     = { ctermfg = colors.gray },
     Conceal                     = { ctermfg = colors.gray },
     Visual                      = { ctermbg = colors.gray },
     MatchParen                  = { ctermbg = colors.cyan_dark },
@@ -66,7 +64,7 @@ local function set_groups()
     PreProc                     = { ctermfg = colors.blue },
     Title                       = { ctermfg = colors.magenta },
     Identifier                  = { ctermfg = colors.cyan_dark, cterm = {} },
-    Special                     = { ctermfg = colors.violet },
+    Special                     = { ctermfg = colors.magenta },
     StorageClass                = { ctermfg = colors.brown },
     Include                     = { link = "Statement" },
     Operator                    = { link = "Normal" },
@@ -147,10 +145,15 @@ local function set_groups()
     BufferLineTabClose          = common.bufferline.selected,
 
     -- language specific
+    ["@variable"]               = { ctermfg = colors.green },
+    ["@type.builtin"]           = { link = "Type" },
+    ["@lsp.type.macro"]         = { link = "Function" },
+    ["@lsp.type.enumMember"]    = { link = "Identifier" },
+
     ["@property.toml"]          = { link = "@type.toml" },
     ["@markup.heading"]         = { link = "Title" },
     ["@markup.list"]            = { link = "Statement" },
-    ["@variable"]               = { ctermfg = colors.green },
+    ["@lsp.type.namespace.rust"]= { link = "Constant" },
   }
 
   for group, parameters in pairs(groups) do
