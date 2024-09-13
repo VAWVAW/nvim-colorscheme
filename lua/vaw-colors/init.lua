@@ -60,6 +60,7 @@ local function set_groups()
     -- pmenu
     Pmenu                       = { ctermfg = colors.white, ctermbg = colors.gray_dark },
     PmenuSel                    = { ctermfg = colors.white, ctermbg = colors.blue },
+    NormalFloat                 = { link = "Pmenu" },
 
     -- keywords
     PreProc                     = { ctermfg = colors.blue },
