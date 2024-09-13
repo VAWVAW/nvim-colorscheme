@@ -81,10 +81,10 @@ local function set_groups()
     Character                   = { link = "String" },
 
     -- vimdiff
-    DiffAdd                     = { ctermfg = colors.black, ctermbg = 65 },
-    DiffChange                  = { ctermfg = colors.black, ctermbg = 67 },
-    DiffDelete                  = { ctermfg = colors.black, ctermbg = 133 },
-    DiffText                    = { ctermfg = colors.black, ctermbg = 251 },
+    DiffAdd                     = { ctermfg = colors.black, ctermbg = 34 },
+    DiffChange                  = { ctermfg = colors.black, ctermbg = 111 },
+    DiffDelete                  = { ctermfg = colors.black, ctermbg = colors.red, cterm = { reverse = true, } },
+    DiffText                    = { ctermfg = colors.black, ctermbg = 248 },
 
     -- plugins:
 
