@@ -124,6 +124,9 @@ local function set_groups()
     NvimTreeModifiedFile        = { ctermfg = common.file.modified },
 
     -- bufferline
+    StatusLine                  = { },
+    StatusLineNC                = { },
+
     BufferLineFill              = common.bufferline.default,
     BufferLineBackground        = common.bufferline.default,
     BufferLineIndicatorSelected = common.bufferline.selected,
